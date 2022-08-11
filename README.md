@@ -2,7 +2,7 @@
 
 | DEMO |
 | :-: | 
-| <img src="READMEAssets/exchangely_gif.gif"/> |
+| <img src="READMEAssets/exchangely_gif.gif"  width="230" height="480"/> |
 
 ## Task
 
