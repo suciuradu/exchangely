@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Convert Currency View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="ConvertCurrencyViewController" customModule="Exchangely" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="382" placeholderIntrinsicHeight="200" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4Tg-j5-9cm">
+                                <rect key="frame" x="16" y="44" width="382" height="240.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hRu-eB-Vy8" customClass="CurrencyBalanceView" customModule="Exchangely" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="KCa-Fv-OJH"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1CF-YI-7Gx" customClass="CurrencyBalanceView" customModule="Exchangely" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="110" width="382" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="cf5-AX-nYo"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2Y-aU-3Hc">
+                                        <rect key="frame" x="0.0" y="220" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o45-aE-Gje" customClass="ActionButton" customModule="Exchangely" customModuleProvider="target">
+                                <rect key="frame" x="16" y="808" width="382" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="didTapExchange:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hNG-E8-nUo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4Tg-j5-9cm" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="4RE-Wj-w29"/>
+                            <constraint firstItem="o45-aE-Gje" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="CeL-dB-kLe"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="o45-aE-Gje" secondAttribute="bottom" constant="24" id="Cpg-Ta-1XQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="o45-aE-Gje" secondAttribute="trailing" constant="16" id="hM2-XF-W2b"/>
+                            <constraint firstItem="4Tg-j5-9cm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="sup-2O-io2"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4Tg-j5-9cm" secondAttribute="trailing" constant="16" id="xZw-vd-3FN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="comissionLabel" destination="R2Y-aU-3Hc" id="q9f-gq-QpE"/>
+                        <outlet property="exchangeButton" destination="o45-aE-Gje" id="gVB-o7-3Zs"/>
+                        <outlet property="exchangeButtonBottomConstraint" destination="Cpg-Ta-1XQ" id="CZp-Es-VEI"/>
+                        <outlet property="fromCurrencyView" destination="hRu-eB-Vy8" id="buK-6h-f2B"/>
+                        <outlet property="mainStackView" destination="4Tg-j5-9cm" id="xuT-3z-0eG"/>
+                        <outlet property="toCurrencyView" destination="1CF-YI-7Gx" id="IT4-hy-L3V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
